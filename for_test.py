@@ -1,2 +1,2 @@
-n = 10
-print(n % 3)
+n = 0
+print(type(n))
