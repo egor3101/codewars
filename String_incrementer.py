@@ -18,6 +18,8 @@ Attention: If the number has leading zeros the amount of digits should be consid
 
 # Проблема в том, что при переходе из str в int(переменная int_num) отбрасываются все нули из-за того, что в Python
 # число не может начинаться с нуля. Также в коде не написано про то что, если это не первое, а например второе число.
+
+#Не детектит ноль как символ для проверки!
 strng = "dasd001"
 for_num = ""
 list_strng = list(strng)
