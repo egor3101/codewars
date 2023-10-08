@@ -20,13 +20,56 @@ Attention: If the number has leading zeros the amount of digits should be consid
 # число не может начинаться с нуля. Также в коде не написано про то что, если это не первое, а например второе число.
 
 #Не детектит ноль как символ для проверки!
-strng = "dasd003"
-for_num = ""
+strng = "dad0890898sadsd00101"
+invers_strng = strng[::-1]
+list_for_strng = list(invers_strng)
+str_for_num = ""
+for simbols in list_for_strng:
+    if simbols.isdigit():
+        str_for_num +=simbols
+    else:
+        break
+
+for_plus_one_1 = int(str_for_num[::-1]) + 1
+for_plus_one_2 = (str(for_plus_one_1)[::-1])
+for_plus_one = int (for_plus_one_2)
+
+
+for simbols in list_for_strng:
+    if simbols.isdigit():
+        list_for_strng.remove(simbols)
+for x in (str(for_plus_one)[::-1]):
+    #list_for_strng.append(x)
+    list_for_strng.insert(0, x)
+
+answer = ''.join(list_for_strng[::-1])
+
+print(for_plus_one)
+#print(list_for_strng[::-1])
+print(answer)
+#print(invers_strng)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""for_num = ""
 list_strng = list(strng)
 changed_list = list(strng)
 int_num = 1
-check_last_number = True
-# Проверка на первое ли это число в списке
+
 for index, simbols in enumerate(list_strng):
     if simbols.isdigit():  # Если объект списка число
         changed_list.remove(simbols)  # Удаляем этот символ из другого списка, чтобы не менять нынешний
@@ -46,3 +89,5 @@ answer = ''.join(changed_list)  # Делаем окончательный отв
 print(answer)
 print(int_num)
 print(for_num)
+print(invers_strng)
+"""
