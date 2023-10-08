@@ -1,2 +1,2 @@
-n = 0
-print(type(n))
+t = "blood"
+print(t[:-1])

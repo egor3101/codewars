@@ -20,18 +20,24 @@ Attention: If the number has leading zeros the amount of digits should be consid
 # число не может начинаться с нуля. Также в коде не написано про то что, если это не первое, а например второе число.
 
 #Не детектит ноль как символ для проверки!
-strng = "dasd001"
+strng = "dasd003"
 for_num = ""
 list_strng = list(strng)
 changed_list = list(strng)
 int_num = 1
+check_last_number = True
+# Проверка на первое ли это число в списке
 for index, simbols in enumerate(list_strng):
     if simbols.isdigit():  # Если объект списка число
         changed_list.remove(simbols)  # Удаляем этот символ из другого списка, чтобы не менять нынешний
 
         for_num += simbols  # Делаем из цифр строку
-        int_num = int(for_num) + 1  # Переводим строку (наши цифры) в int и прибавляем 1 для ответа по условию задачи
+        if simbols != "0":
+            int_num = int(for_num) + 1  # Переводим строку (наши цифры) в int и прибавляем 1 для ответа по условию задачи
+        else:
+            changed_list.append(simbols)
         # print(simbols , index)
+
 
 for x in str(int_num):  # Добавляем ответ (который уже + 1) в изменённый список. Для это добавляем строку в список.
     changed_list.append(x)
