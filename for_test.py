@@ -1,2 +1,2 @@
-t = "blood"
-print(t[:-1])
+s = "с"
+s.translate("0" + "s")
