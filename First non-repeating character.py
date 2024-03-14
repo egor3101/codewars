@@ -9,8 +9,22 @@ If a string contains all repeating characters, it should return an empty string 
 † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character."""
 
 import collections
-check_amount_letter = collections.Counter(s)
+
+
+answer =""
+check_exist_answer = 0
+check_amount_letter = collections.Counter(s.lower())
 for key, value in check_amount_letter.items():
     if value == 1:
-        print(key)
+        check_exist_answer = 1
+        answer = key
+        for letter in s:
+            if (letter.isupper()) and (letter == answer.upper()):
+                answer = answer.upper()
+
+                break
+
         break
+print(answer)
+
+
