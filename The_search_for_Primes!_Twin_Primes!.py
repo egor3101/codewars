@@ -18,21 +18,19 @@ answer = 0
 if num > 3:
     list_with_primal.append(3)
     while i != num + 2:
-        out = int(i // 2 + 1)
+        out = int(i**0.5)+1 #int(i // 2 + 1)
         for z in range(2, out):
             if i % z == 0:
                 pass
                 break
             elif z == out - 1:
                 list_with_primal.append(i)
-        #print(out)
         i += 1
     while x != len(list_with_primal) - 1:
         if list_with_primal[x] + 2 == list_with_primal[y]:
             answer += 1
         x += 1
         y += 1
-    print(list_with_primal)
 
 elif num == 3:
     answer = 1
