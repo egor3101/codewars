@@ -16,12 +16,13 @@ same_structure_as([ [ [ ], [ ] ] ], [ [ [ ], [ ] ] ] )
 # should return False
 same_structure_as([ [ [ ], [ ] ] ], [ [ 1, 1 ] ] )"""
 
-original = [ 1, [ 1, 1 ] ]
-other = [ 2, [ 2, 2 ] ]
+original = [ [ [],[] ] ]
+other =  [ [1,1] ]
 
 original_tuple = tuple(original)
 other_tuple = tuple(other)
 answer = True
+
 for_ex = []
 for_ex_t = ()
 for_ex_str = "dsad"
@@ -32,6 +33,12 @@ while counter != len(original_tuple):
 
         # Проверка каждого элемента в исходном значении на то, что это либо словарь, либо list, либо строка
         if type((original_tuple[counter])) == type(for_ex):
+            # Если это список, то мы в него заглядываем (В его значения)
+            for elements in original_tuple[counter]:
+                if type(elements) == type(for_ex):
+                    pass
+
+
             if len(original_tuple[counter]) != len(other_tuple[counter]):
                 answer = False
                 break
@@ -46,7 +53,6 @@ while counter != len(original_tuple):
                 answer = False
                 break
 
-                # print(1)
     else:
         answer = False
         break
